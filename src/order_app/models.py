@@ -29,4 +29,5 @@ class Commande(models.Model):
     panier = models.ForeignKey(Panier, on_delete=models.CASCADE)
     statut = models.CharField(max_length=20, choices=STATUT_COMMANDE, default="Validée")
     date_commande = models.DateTimeField(auto_now_add=True)
+    paiements = models.OneToOneField("payement_app.Paiement",related_name="relat_paye", on_delete=models.SET_NULL, null=True, blank=True)
     
