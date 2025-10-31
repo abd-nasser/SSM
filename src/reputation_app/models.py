@@ -16,3 +16,8 @@ class PreuveSociale(models.Model):
     date_obtention = models.DateField()
     description = models.TextField(blank=True)
     ordre_affichage= models.IntegerField(default=0)
+
+class Expertise(models.Model):
+    nom = models.CharField(max_length=100) # Ex: "vos point fort et qualité"
+    pourcentage = models.IntegerField() #Ex : 90% bar de progression
+    icone = models.CharField() #ex "faq-roof"
